@@ -1,0 +1,9 @@
+install npm
+problems with security and powershell, ask claude how to configure
+can run npm commands in powershell afterwards
+generate a project for react with vite
+App is call from main and render into index
+modifiying App to see the different effects
+como importar componentes
+como usar los props
+Conditional rendering
