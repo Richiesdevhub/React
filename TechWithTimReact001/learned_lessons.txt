@@ -7,3 +7,4 @@ modifiying App to see the different effects
 como importar componentes
 como usar los props
 Conditional rendering
+Using state, and understanding what the deafult value of state is
