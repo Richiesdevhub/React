@@ -1,5 +1,5 @@
 import './App.css';
-import RandomColor from './components';
+import RandomColor from './components/random_color_generator';
 
 function App(){
     return(

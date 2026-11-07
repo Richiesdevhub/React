@@ -37,8 +37,18 @@ export default function RandomColor(){
             ? handleCreateRandomHexColor
             : handleCreateRandomRgbColor
             }>Generate Random Color</button>
-        <div>
-            
-        </div>
+            <div style={{
+                display:'flex',
+                justifyContent:'center',
+                alignItems:'center',
+                color:'#fff',
+                fontSize:'80px',
+                marginTop:'50px',
+                flexDirection: 'column ',
+                gap:'20px'
+            }}>
+                <h3>{typeOfColor==='rgb'?'RGB Color':'HEX Color'}</h3>
+                <h2>{color}</h2>
+            </div>
     </div>
 )}
