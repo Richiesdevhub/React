@@ -1,8 +1,8 @@
-import { use } from "react"
-import { state, useState } from "react"
-import { useEffect } from "react";
+import {useState, useEffect } from "react"
 
-export default function image_slider({ url, limit }) {
+//import './style.css'
+
+export default function Image_slider({ url, page=1 , limit=5 }) {
 
     const [images, setImages] = useState([]);
     const [currentSlide, setCurrectSlide] = useState(0);
@@ -14,8 +14,9 @@ export default function image_slider({ url, limit }) {
 
         try {
             setLoading(true);
-            const response = await fetch(getUrl);
+            const response = await fetch(`${getUrl}?page=${page}&limit=${limit}`);
             const data = await response.json();
+            console.log("respuesta de la API:", data);
 
             if (data) {
                 setImages(data);
@@ -25,12 +26,16 @@ export default function image_slider({ url, limit }) {
         } catch (e) {
             setErrorMsg(e.message);
             setLoading(false);
+        }finally {
+            setLoading(false);
         }
     }
 
     useEffect(() => {
-        if (url != '') fetchImages(url)
+        if (url) fetchImages(url)
     }, [url])
+
+    console.log("images: ",images)
 
     if (loading) {
         return <div>Loading data ! Please wait</div>
